@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import InstagramLogin from './insta';
-import { Container, Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Container, Grid, Image} from 'semantic-ui-react'
 import logo from '../assets/newlogo.jpg'
 
   
@@ -15,7 +15,7 @@ class Login extends Component{
     responseInstagram = (response) => {
         console.log("response:" + response);
         if (response){
-            this.setState({token:response, login:true})
+            this.props.set_login(response)
         }
     }
 
@@ -35,7 +35,6 @@ class Login extends Component{
                             <span> Login with Instagram</span>
                         </InstagramLogin>
                     </Grid.Column>
-                    
                 </Grid>
             </Container>
         )
